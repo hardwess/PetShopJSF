@@ -16,6 +16,62 @@ public class Animal {
 
 	}
 
-	
-	
+	public void setId(long id) {
+
+		this.id = id;
+
+	}
+
+	public void setNome(String nome) {
+
+		this.nome = nome;
+
+	}
+
+	public void setNascimento(Date nascimento) {
+
+		this.nascimento = nascimento;
+
+	}
+
+	public void setPeso(float peso) {
+
+		this.peso = peso;
+
+	}
+
+	public long getId() {
+
+		return id;
+
+	}
+
+	public String getNome() {
+
+		return nome;
+
+	}
+
+	public Date getNascimento() {
+
+		return nascimento;
+
+	}
+
+	public float getPeso() {
+
+		return peso;
+
+	}
+
+	@Override
+	public String toString() {
+
+		StringBuffer sb = new StringBuffer();
+		sb.append("Nome: " + getNome() + "\n");
+		sb.append("ID: " + getId() + "\n");
+		return sb.toString();
+
+	}
+
 }
