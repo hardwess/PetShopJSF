@@ -11,19 +11,20 @@
 	<h:form id="form">
 		<h:panelGrid columns="2" border="1">
 			<h:outputLabel value="ID" />
-			<h:inputText id="id" />
+			<h:inputText id="id" action="#{animal.a.setId}" />
 
 			<h:outputLabel value="Nome" />
-			<h:inputText id="nome" />
+			<h:inputText id="nome" action="#{animal.a.setNome}" />
 
 			<h:outputLabel value="Nascimento" />
-			<h:inputText id="nascimento" />
+			<h:inputText id="nascimento" action="#{animal.a.setNascimento}" />
 
 			<h:outputLabel value="Peso" />
-			<h:inputText id="peso" />
+			<h:inputText id="peso" action="#{animal.a.setPeso}" />
 		</h:panelGrid>
 		<h:panelGrid columns="2" border="1">
-			<h:commandButton id="btnCadastra" value="Cadastrar" />
+			<h:commandButton id="btnCadastra" value="Cadastrar"
+				action="#{animal.adicionar(#{a})}" />
 			<h:commandButton id="btnPesquisa" value="Pesquisar" />
 		</h:panelGrid>
 	</h:form>
