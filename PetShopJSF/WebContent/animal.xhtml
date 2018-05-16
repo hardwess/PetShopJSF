@@ -8,25 +8,34 @@
 	<title>Pet Shop</title>
 </h:head>
 <h:body>
+
 	<h:form id="form">
-		<h:panelGrid columns="2" border="1">
+		<h:panelGrid columns="3" border="0">
 			<h:outputLabel value="ID" />
 			<h:inputText id="id" value="#{animal.a.id}" />
-
+			<h:message for="id"/>
+				
 			<h:outputLabel value="Nome" />
 			<h:inputText id="nome" value="#{animal.a.nome}" />
+			<h:message for="nome"/>
 
 			<h:outputLabel value="Nascimento" />
-			<h:inputText id="nascimento" value="#{animal.a.nascimento}" />
-
+			<h:inputText id="nascimento" value="#{animal.a.nascimento}">
+			<f:convertDateTime pattern="dd/MM/yyyy"/>
+			</h:inputText>
+			<h:message for="nascimento"/>
+			
 			<h:outputLabel value="Peso" />
 			<h:inputText id="peso" value="#{animal.a.peso}" />
+			<h:message for="peso"/>
 		</h:panelGrid>
+		
 		<h:panelGrid columns="2" border="1">
 			<h:commandButton id="btnCadastra" value="Cadastrar"
 				action="#{animal.adicionar}" />
 			<h:commandButton id="btnPesquisa" value="Pesquisar" />
 		</h:panelGrid>
+		
 	</h:form>
 </h:body>
 </html>

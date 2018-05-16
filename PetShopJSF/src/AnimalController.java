@@ -19,6 +19,7 @@ public class AnimalController {
 	}
 
 	public void adicionar() {
+		System.out.println("passou");
 		AnimalDAOImplementation d = new AnimalDAOImplementation();
 		d.adicionar(a);
 	}
