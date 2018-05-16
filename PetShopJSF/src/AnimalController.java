@@ -8,11 +8,17 @@ import javax.faces.bean.ViewScoped;
 
 public class AnimalController {
 
-	@ManagedProperty(value = "#{a}")
-
 	private Animal a = new Animal(0, null, null, 0);
 
-	public void adicionar(Animal a) {
+	public Animal getA() {
+		return a;
+	}
+
+	public void setA(Animal a) {
+		this.a = a;
+	}
+
+	public void adicionar() {
 		AnimalDAOImplementation d = new AnimalDAOImplementation();
 		d.adicionar(a);
 	}
