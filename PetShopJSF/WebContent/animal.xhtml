@@ -13,29 +13,37 @@
 		<h:panelGrid columns="3" border="0">
 			<h:outputLabel value="ID" />
 			<h:inputText id="id" value="#{animal.a.id}" />
-			<h:message for="id"/>
-				
+			<h:message for="id" />
+
 			<h:outputLabel value="Nome" />
 			<h:inputText id="nome" value="#{animal.a.nome}" />
-			<h:message for="nome"/>
+			<h:message for="nome" />
 
 			<h:outputLabel value="Nascimento" />
 			<h:inputText id="nascimento" value="#{animal.a.nascimento}">
-			<f:convertDateTime pattern="dd/MM/yyyy"/>
+				<f:convertDateTime pattern="dd/MM/yyyy" />
 			</h:inputText>
-			<h:message for="nascimento"/>
-			
+			<h:message for="nascimento" />
+
 			<h:outputLabel value="Peso" />
 			<h:inputText id="peso" value="#{animal.a.peso}" />
-			<h:message for="peso"/>
+			<h:message for="peso" />
 		</h:panelGrid>
-		
+
 		<h:panelGrid columns="2" border="1">
 			<h:commandButton id="btnCadastra" value="Cadastrar"
 				action="#{animal.adicionar}" />
 			<h:commandButton id="btnPesquisa" value="Pesquisar" />
 		</h:panelGrid>
-		
+
+		<h:dataTable value="#{animal.lista}" var="a" border="1"
+			rendered="#{animal.lista.size() gt 0}">
+			<h:column>#{a.id}</h:column>
+			<h:column>#{a.nome}</h:column>
+			<h:column>#{a.nascimento}</h:column>
+			<h:column>#{a.peso}</h:column>
+		</h:dataTable>
+
 	</h:form>
 </h:body>
 </html>
